@@ -17,3 +17,5 @@ Will be uploaded when the workshop starts :-)
 - https://www.arduino.cc/en/Reference/ArduinoMKRENV
 - https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/
 - https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/
+- https://www.thethingsnetwork.org/docs/devices/bytes/
+- https://www.thethingsindustries.com/docs/integrations/payload-formatters/javascript/
