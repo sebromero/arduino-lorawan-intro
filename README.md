@@ -51,6 +51,30 @@ See: https://www.arduino.cc/en/Reference/ArduinoLowPower
 # Assignment
 Will be uploaded when the workshop starts :-)
 
+Create your own LoRa powered environment sensor station!
+
+## Warm up tasks
+
+1. Create a TTS app and register your device
+2. Create your own sketch that reads from the ENV shield sensors
+3. Send the sensor values to TTS every 20 minutes. Put the board to sleep in the mean time.
+4. Add a payload decoder to decode the sensor values
+5. Round the float values to two digits in the payload decoder
+
+## Tasks
+6. Add a warning message in the payload decoder if the temperature is too high / too cold (e.g. -5 / above 34 celsius)
+7. Define approximate illuminance thresholds for: day, twilight, night and add a “daylight” property with a value according to those thresholds (changes over the day)
+8. Add a “pressureTendency” property to see if atmospheric pressure is rising / falling. Do so by calculating the tendency over the last 3 hours. (Hint: millis())
+9. Add the weekly average temperature as a “averageTemperature” property
+
+## Bonus
+1. Use a TTS downlink to maintain and synchronise a clock on the Arduino (manually).
+2. Now that you know the time, replace the twilight value of the “daylight” property with either dusk or dawn depending on the time of the day.
+3. Record the approximate sunrise / sunset times based on the daylight property and add them as “sunrise” / “sunset” properties (don’t change over the day)
+
+## Optional
+If you have a micro SD card, save the sensor data to the SD card to prevent data loss when power goes out. Upon boot, check for existing sensor data and send it to TTS. SEE: https://www.arduino.cc/en/reference/SD
+
 
 # Troubleshooting
 If you encounter any errors in the Arduino IDE, please refer to the Arduino help center: https://support.arduino.cc/hc/en-us
