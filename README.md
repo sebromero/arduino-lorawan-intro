@@ -70,6 +70,7 @@ Create your own LoRa powered environment sensor station!
 1. Use a TTS downlink to maintain and synchronise a clock on the Arduino (manually).
 2. Now that you know the time, replace the twilight value of the “daylight” property with either dusk or dawn depending on the time of the day.
 3. Record the approximate sunrise / sunset times based on the daylight property and add them as “sunrise” / “sunset” properties (don’t change over the day)
+4. Think of a way of enabling/disabling the 4 sensors by sending a downlink messages with just 1 byte. (Hint: Use bit-wise operators). If a sensor is disabled, the sensor value shall not be read/sent via LoRaWAN to save energy and bandwidth. Send the same byte in your uplink message to let the payload decoder know how to decode the message. e.g. if The pressure sensor is disabled, only 3 * 4 = 12 bytes are sent for the sensor values and the bytes of the 3rd sensor in the byte stream belong now to the illuminance sensor rather than the pressure sensor.
 
 ## Optional
 If you have a micro SD card, save the sensor data to the SD card to prevent data loss when power goes out. Upon boot, check for existing sensor data and send it to TTS. SEE: https://www.arduino.cc/en/reference/SD
