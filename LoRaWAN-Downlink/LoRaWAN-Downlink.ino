@@ -44,7 +44,11 @@ void loop() {
   delay(60 * 1000); // Wait 60 secs before polling again
   
   modem.poll();
-  delay(5000);
+
+  // On The Things Stack the RX1 window is 5s which is the earliest moment
+  // to receive any downlink data. We add 1500ms to allow for the transmission
+  // of the data to complete.
+  delay(5000 + 1500);
 
   if (!modem.available()) {
     Serial.println("No downlink message received at this time.");    
