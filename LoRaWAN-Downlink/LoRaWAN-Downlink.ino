@@ -44,7 +44,7 @@ void loop() {
   delay(60 * 1000); // Wait 60 secs before polling again
   
   modem.poll();
-  delay(5000);
+  delay(6500);
 
   if (!modem.available()) {
     Serial.println("No downlink message received at this time.");    
