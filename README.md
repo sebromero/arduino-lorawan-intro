@@ -49,7 +49,6 @@ An Arduino sketch that shows how to read from the MKR ENV shield sensors and sen
 See: https://www.arduino.cc/en/Reference/ArduinoLowPower
 
 # Assignment
-Will be uploaded when the workshop starts :-)
 
 Create your own LoRa powered environment sensor station!
 
