@@ -37,6 +37,9 @@ See: https://www.thethingsindustries.com/docs/integrations/payload-formatters/ja
 - **[ReadSensors-LoRaWAN](./ReadSensors-LoRaWAN)**:
 An Arduino sketch that shows how to read from the MKR ENV shield sensors and send those values as floats to a LoRaWAN backend.
 
+- **[ReadAnalogSensor-LoRaWAN](./ReadAnalogSensor-LoRaWAN)**:
+An Arduino sketch that shows how to read an analog sensors and send the value as an int to a LoRaWAN backend.
+
 - **[payload-formatter-float.js](./payload-formatter-float.js)**:
 A javascript snippet that shows an implementation of a Payload Decoder that unpacks float values from a byte stream and converts them into a javascript object.
 See: https://www.thethingsnetwork.org/docs/devices/bytes/
