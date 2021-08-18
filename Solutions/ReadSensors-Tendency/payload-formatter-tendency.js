@@ -17,9 +17,9 @@ function decodeUplink(input) {
     var pressureTendencyNumeric = sensorData[4];
     var pressureTendency = "undefined";
 
-    if (pressureTendencyNumeric > 1) {
+    if (pressureTendencyNumeric > 0) {
       pressureTendency = "rising";
-    } else if(pressureTendencyNumeric < -1){
+    } else if(pressureTendencyNumeric < 0){
       pressureTendency = "falling";
     }
 
