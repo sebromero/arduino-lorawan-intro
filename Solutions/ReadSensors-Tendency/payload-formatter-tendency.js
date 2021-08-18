@@ -1,11 +1,3 @@
-/*
-Sample data:
-Temperature = 27.03 °C
-Humidity    = 56.49 %
-Pressure    = 97.51 kPa
-Illuminance = 40.00 lx
-*/
-
 function decodeUplink(input) {
     var sensorData = [];
     var floatSize = 4; // Size of a float in bytes
@@ -22,12 +14,12 @@ function decodeUplink(input) {
       sensorData.push(roundedValue);
     }
 
-    var pressure = sensorData[2];
+    var pressureTendencyNumeric = sensorData[4];
     var pressureTendency = "undefined";
 
-    if (pressure > 0) {
+    if (pressureTendencyNumeric > 1) {
       pressureTendency = "rising";
-    } else if(pressure < 0){
+    } else if(pressureTendencyNumeric < -1){
       pressureTendency = "falling";
     }
 
@@ -35,8 +27,9 @@ function decodeUplink(input) {
         bytes: input.bytes,
         temperature: sensorData[0] + " °C",
         humidity: sensorData[1] + " %",
-        pressure: pressure + " kPa",
+        pressure: sensorData[2] + " kPa",
         illuminance: sensorData[3] + " lx",
+        pressureTendencyNumeric: pressureTendencyNumeric,
         pressureTendency: pressureTendency
     };
 

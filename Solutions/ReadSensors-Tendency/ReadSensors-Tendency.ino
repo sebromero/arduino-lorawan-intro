@@ -11,7 +11,7 @@ float temperature;
 float humidity;
 float pressure;
 float illuminance;
-float trend;
+float pressureTendency;
 
 /**
  * Simply calculates the moving difference of the numbers in the array
@@ -82,7 +82,7 @@ void loop() {
   pressure    = ENV.readPressure();
   illuminance = ENV.readIlluminance();
   maybeUpdatePressureTendency(pressure);
-  trend = calculatePressureTrend(pressureReadings, pressureReadingIndex);
+  pressureTendency = calculatePressureTrend(pressureReadings, pressureReadingIndex);
 
   // print each of the sensor values
   Serial.print("Temperature = ");
@@ -101,15 +101,22 @@ void loop() {
   Serial.print(illuminance);
   Serial.println(" lx");
 
-  Serial.print("Pressure Trend = ");  
-  Serial.print(trend);
+  Serial.print("Pressure Tendency = ");  
+  Serial.print(pressureTendency);
   Serial.println(" kPa");  
 
   // print an empty line
   Serial.println();
 
-  // wait 1 second to print again
-  delay(1000);
-
   // TODO: Send values to LoRaWAN network
+  /* Keep the following order of variables when constructing the packet:
+  1. temperature
+  2. humidity
+  3. pressure
+  4. illuminance
+  5. pressureTendency
+  */
+
+  // wait 120 seconds to send again
+  delay(120000);
 }
