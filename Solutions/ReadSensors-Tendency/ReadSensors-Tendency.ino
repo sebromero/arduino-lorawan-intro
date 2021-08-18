@@ -117,6 +117,12 @@ void loop() {
   5. pressureTendency
   */
 
+ /*
+  If the air pressure drops by more than 1 to 2 hPA in one hour, 
+  then storms and violent winds are to be expected.
+  This sketch could be easily adapted to also issue storm warnings.
+  */
+
   // wait 120 seconds to send again
   delay(120000);
 }
