@@ -17,6 +17,7 @@ function decodeUplink(input) {
     var pressureTendencyNumeric = sensorData[4];
     var pressureTendency = "undefined";
 
+    // NOTE: Unit is kPa, so 0.1 corresponds to 1 hPa
     if (pressureTendencyNumeric > 0) {
       pressureTendency = "rising";
     } else if(pressureTendencyNumeric < 0){
